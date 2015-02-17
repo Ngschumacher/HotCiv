@@ -4,7 +4,7 @@ using HotCiv.Tiles;
 
 namespace Squazz.HotCiv.Managers
 {
-    public class TileManager
+    public class TileManager : ITileManager
     {
         private readonly List<ITile> _tiles = new List<ITile>(); 
         public Plain CreatePlain(Position position)

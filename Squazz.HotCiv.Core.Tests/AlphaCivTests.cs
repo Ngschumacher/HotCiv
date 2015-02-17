@@ -1,27 +1,25 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using HotCiv;
 using HotCiv.Tiles;
-using HotCiv.Units;
 using NUnit.Framework;
 using Squazz.HotCiv.Managers;
 
 namespace Squazz.HotCiv.Core.Tests
 {
     [TestFixture]
-    public class AlphaCivTests
+    public class GameTest
     {
         Game _game;
         UnitManager _unitManager;
-        CityManager _cityManager;
+        ICityManager _cityManager;
         TileManager _tileManager;
         PlayerManager _playerManager;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void Initialize()
         {
 
-            _unitManager = new UnitManager();
+			_unitManager = Substitute.For<ICityManager>();
             _cityManager = new CityManager();
             _tileManager = new TileManager();
             _playerManager = new PlayerManager();

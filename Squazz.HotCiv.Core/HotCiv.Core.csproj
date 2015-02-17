@@ -7,8 +7,8 @@
     <ProjectGuid>{485D19EE-4FF4-4FBC-9A35-82E7D0463EFB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Squazz.HotCiv</RootNamespace>
-    <AssemblyName>Squazz.HotCiv.Core</AssemblyName>
+    <RootNamespace>HotCiv</RootNamespace>
+    <AssemblyName>HotCiv.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,6 +41,10 @@
   <ItemGroup>
     <Compile Include="Managers\CityManager.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Managers\ICityManager.cs" />
+    <Compile Include="Managers\IPlayerManager.cs" />
+    <Compile Include="Managers\ITileManager.cs" />
+    <Compile Include="Managers\IUnitManager.cs" />
     <Compile Include="Managers\PlayerManager.cs" />
     <Compile Include="Managers\TileManager.cs" />
     <Compile Include="Managers\UnitManager.cs" />

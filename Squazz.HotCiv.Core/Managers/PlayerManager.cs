@@ -1,27 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HotCiv;
+using System.Data;
+using Squazz.HotCiv.Managers;
 
-namespace Squazz.HotCiv.Managers
+namespace HotCiv.Managers
 {
-    public class PlayerManager
+    public class PlayerManager : IPlayerManager
     {
         readonly List<Player> _players = new List<Player>();
-        private Player CurrentPlayersTurn = null;
+        private Player _currentPlayersTurn = null;
         public Player CreatePlayer(string name)
         {
+	        if (name == null)
+				throw new ArgumentNullException("name");
+			if (string.IsNullOrWhiteSpace(name))
+				throw new ArgumentException("name");
             if (!Enum.IsDefined(typeof(PlayerColor), _players.Count)){
                 return null;
             }
 
-            var player = new Player((PlayerColor)_players.Count);
+            var player = new Player((PlayerColor)_players.Count, name);
             //No players yet, make it first players turn.
             if (_players.Count == 0)
             {
-                CurrentPlayersTurn = player;
+                _currentPlayersTurn = player;
             }
             _players.Add(player);
 
@@ -30,21 +32,23 @@ namespace Squazz.HotCiv.Managers
 
         public Player GetPlayerForThisTurn()
         {
-            return CurrentPlayersTurn;
+            return _currentPlayersTurn;
         }
 
         public Player NextPlayersTurn()
         {
-            var currentPlayerIndex = _players.IndexOf(CurrentPlayersTurn);
-            var newPlayer = _players[++currentPlayerIndex];
-            if (newPlayer == null)
-            {
-                return _players[0];
-            }
-            else
-            {
-                return newPlayer;
-            }
+			if(_currentPlayersTurn == null)
+				throw new NoNullAllowedException("currentPlayerInTurn is null, no users");
+            var currentPlayerIndex = _players.IndexOf(_currentPlayersTurn) + 1;
+	       
+			if (currentPlayerIndex == _players.Count)
+	        {
+		        currentPlayerIndex = 0;
+	        }
+			
+	        _currentPlayersTurn = _players[currentPlayerIndex];
+
+	        return GetPlayerForThisTurn();
         }
     }
 }

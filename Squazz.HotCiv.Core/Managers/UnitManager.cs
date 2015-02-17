@@ -6,7 +6,7 @@ using HotCiv.Units;
 
 namespace Squazz.HotCiv.Managers
 {
-    public class UnitManager
+    public class UnitManager : IUnitManager
     {
         readonly List<IUnit> _units = new List<IUnit>(); 
         public Archer CreateArcher(Player owner, ITile tilePosition)

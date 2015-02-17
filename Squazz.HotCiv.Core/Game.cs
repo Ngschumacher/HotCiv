@@ -12,11 +12,11 @@ namespace Squazz.HotCiv
     public class Game : IGame
     {
         
-        private readonly TileManager _tileManager;
-        private readonly UnitManager _unitManager;
-        private readonly CityManager _cityManager;
-        private readonly PlayerManager _playerManager;
-        public Game(TileManager tileManager, UnitManager unitManager, CityManager cityManager, PlayerManager playerManager)
+        private readonly ITileManager _tileManager;
+        private readonly IUnitManager _unitManager;
+        private readonly ICityManager _cityManager;
+        private readonly IPlayerManager _playerManager;
+        public Game(ITileManager tileManager, IUnitManager unitManager, ICityManager cityManager, IPlayerManager playerManager)
         {
             _tileManager = tileManager;
             _unitManager = unitManager;

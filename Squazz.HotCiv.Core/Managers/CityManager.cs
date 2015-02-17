@@ -5,7 +5,7 @@ using HotCiv.Tiles;
 
 namespace Squazz.HotCiv.Managers
 {
-    public class CityManager
+    public class CityManager : ICityManager
     {
         private readonly List<ICity> _cities = new List<ICity>(); 
         public ICity GetCityAt(Position position)
