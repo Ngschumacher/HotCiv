@@ -93,7 +93,7 @@ namespace Squazz.HotCiv
         public void ChangeProductionInCityAt(Position position, String unitType) {}
 
         public void PerformUnitActionAt( Position position ) {}
-
+	
         public Player AddPlayer(string name)
         {
             return _playerManager.CreatePlayer(name);
