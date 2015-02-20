@@ -10,5 +10,7 @@ namespace Squazz.HotCiv.Managers
 		Ocean CreateOcean(Position position);
 		ITile GetTileAt(Position position);
 		ITile GetLegalTileForItem(Position position);
+
+		bool ValidPosition(Position position);
 	}
 }

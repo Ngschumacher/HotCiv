@@ -157,7 +157,7 @@ namespace HotCiv.Core.Test
 			}
 
 			[Test]
-			public void FirstUserGetsTurnAgian_Success()
+			public void FirstUserGetsTurnAgain_Success()
 			{
 				var firstPlayer = _playerManager.CreatePlayer("First");
 				var secondPlayer = _playerManager.CreatePlayer("Second");

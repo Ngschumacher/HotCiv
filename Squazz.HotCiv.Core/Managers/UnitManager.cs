@@ -1,15 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using HotCiv;
 using HotCiv.Tiles;
 using HotCiv.Units;
+using Squazz.HotCiv;
+using Squazz.HotCiv.Managers;
 
-namespace Squazz.HotCiv.Managers
+namespace HotCiv.Managers
 {
     public class UnitManager : IUnitManager
     {
-        readonly List<IUnit> _units = new List<IUnit>(); 
-        public Archer CreateArcher(Player owner, ITile tilePosition)
+        readonly List<IUnit> _units = new List<IUnit>();
+
+	    public IUnit Create<TIUnit>()
+	    {
+		    
+	    }
+		
+		public Archer CreateArcher(Player owner, ITile tilePosition)
         {
             if (tilePosition == null)
                 return null;

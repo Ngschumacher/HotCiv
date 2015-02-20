@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotCiv.Managers;
 using HotCiv.Tiles;
 using NSubstitute;
 using NUnit.Framework;
@@ -35,12 +36,6 @@ namespace HotCiv.Core.Test
 		}
 
 		
-
-		[Test]
-		public void FirstPlayer()
-		{
-			Assert.AreEqual(PlayerColor.Red, _game.GetPlayerInTurn().Color, "Red should be the first player to do a action");
-		}
 
 		[Test]
 		public void ShouldHaveCityAt1_1()

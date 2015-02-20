@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using HotCiv;
 using HotCiv.Cities;
+using HotCiv.Managers;
 using HotCiv.Tiles;
 using HotCiv.Units;
+using Squazz.HotCiv;
 using Squazz.HotCiv.Managers;
 
-namespace Squazz.HotCiv
+namespace HotCiv
 {
     public class Game : IGame
     {

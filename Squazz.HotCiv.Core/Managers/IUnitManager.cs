@@ -1,8 +1,8 @@
-﻿using HotCiv;
-using HotCiv.Tiles;
+﻿using HotCiv.Tiles;
 using HotCiv.Units;
+using Squazz.HotCiv;
 
-namespace Squazz.HotCiv.Managers
+namespace HotCiv.Managers
 {
 	public interface IUnitManager
 	{
